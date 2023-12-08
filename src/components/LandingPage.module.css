@@ -1,0 +1,52 @@
+.hero {
+  background: #f0f0f0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.hero_content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.features {
+  background: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.feature {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.feature h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.feature a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.feature a:hover {
+  text-decoration: underline;
+}

@@ -1,4 +1,3 @@
-// DropzoneComponent.js
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import Draggable from 'react-draggable';
@@ -69,26 +68,31 @@ const DropzoneComponent = () => {
 
   return (
     <div className="dropzone-container">
+      <div>
+        <h1 className="heading">Bible Image Generator:</h1>
+      </div>
       <div {...getRootProps()} className="dropzone">
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Drag and drop some files here, or click to select files</p>
       </div>
       <div className="files-container">
-        <h2 className="heading">Uploaded Files:</h2>
+        <h2 className="heading">Image Preview:</h2>
         {files.map((file) => (
           <div key={file.name} className="file-container">
-            <div className="image-preview-container">
-              <img src={URL.createObjectURL(file)} alt={file.name} className="preview-image" />
-              <Draggable
-                defaultPosition={{ x: 0, y: 0 }}
-                bounds="parent"
-                scale={1}
-                onDrag={handleDrag}
-              >
-                <div className="text-overlay">
-                  <p>{customText}</p>
-                </div>
-              </Draggable>
+            <div className="image-preview-box">
+              <div className="image-preview-container">
+                <img src={URL.createObjectURL(file)} alt={file.name} className="preview-image" />
+                <Draggable
+                  defaultPosition={{ x: 0, y: 0 }}
+                  bounds="parent"
+                  scale={1}
+                  onDrag={handleDrag}
+                >
+                  <div className="text-overlay">
+                    <p>{customText}</p>
+                  </div>
+                </Draggable>
+              </div>
             </div>
             <span>{file.name}</span>
             <button onClick={removeFile}>Remove</button>
@@ -96,7 +100,7 @@ const DropzoneComponent = () => {
         ))}
       </div>
       <div className="input-box">
-        <h2 className="heading">Custom Text:</h2>
+        <h2 className="heading">Enter Bible verse or custom text here:</h2>
         <label htmlFor="customText">Enter custom text:</label>
         <input
           type="text"
